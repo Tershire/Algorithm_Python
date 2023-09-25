@@ -1,4 +1,5 @@
 # Q01_valid_palindrome.py
+# LeetCode #125
 
 # Tershire
 # 2023 SEP 21
@@ -8,6 +9,10 @@ from typing import Deque
 import collections
 import re
 
+
+# KEY TAKEAWAY ****************************************************************
+# > list flip & check
+# s == s[::-1]
 
 # case ////////////////////////////////////////////////////////////////////////
 s = "A man, a plan, a canal: Panama"
