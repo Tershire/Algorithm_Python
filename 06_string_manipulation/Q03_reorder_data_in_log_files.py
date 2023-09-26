@@ -103,7 +103,34 @@ def f2(logs: list[str]) -> list[str]:
     return letter_logs + digit_logs
 
 
+# -----------------------------------------------------------------------------
+# me x book
+# 45 [ms]
+# I was concerned about the split() check since it seemed costly.
+# but the result is not so different from f2. why (?)
+def f2a(logs: list[str]) -> list[str]:
+    letter_logs, digit_logs = [], []
+    for log in logs:
+        for i, letter in enumerate(log):
+            if letter == " ":
+                test_letter = log[i + 1]  # token following the first " "
+                if test_letter.isalpha():
+                    letter_logs.append(log)
+                else:
+                    digit_logs.append(log)
+                break
+
+    def function(x: str) -> (str, str):
+        x_split = x.split()
+        return x_split[1:], x_split[0]
+
+    letter_logs.sort(key=function)
+
+    return letter_logs + digit_logs
+
+
 # test ////////////////////////////////////////////////////////////////////////
 print(f1(logs))
 print(f1B(logs))
 print(f2(logs))
+print(f2a(logs))
