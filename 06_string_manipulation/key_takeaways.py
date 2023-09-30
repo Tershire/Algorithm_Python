@@ -7,7 +7,6 @@
 import re
 import collections
 
-
 # string | list reverse ///////////////////////////////////////////////////////
 a = "abcde"
 # check simple palindrome
@@ -23,6 +22,9 @@ print(b)
 
 
 # sort key & lambda ///////////////////////////////////////////////////////////
+# also, multiple criteria example (key=<criteria in priority>))
+# following criteria are applied,
+# when the results of the previous criterion are the same
 def function(x: str) -> (str, str):
     x_split = x.split()
     return x_split[1:], x_split[0]
@@ -37,6 +39,24 @@ print(logs)
 # <M2> sort key & lambda function
 logs.sort(key=lambda x: (x.split()[1:], x.split()[0]))
 print(logs)
+
+
+# ex) -------------------------------------------------------------------------
+def first_then_last(x: str) -> (str, str):
+    return x[0], x[-1]
+
+
+codes = ["b0a", "a0b", "a1a"]
+
+print(sorted(codes))
+
+codes.sort(key=first_then_last)
+print(codes)
+
+
+# sort a string ///////////////////////////////////////////////////////////////
+text = "bca"
+print("".join(sorted(text)))
 
 
 # re (regular expression) /////////////////////////////////////////////////////
