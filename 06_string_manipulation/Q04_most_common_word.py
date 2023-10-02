@@ -8,7 +8,6 @@
 import re
 import collections
 
-
 # KEY TAKEAWAY ****************************************************************
 # > re
 # \w means [a-zA-Z0-9_]
@@ -47,12 +46,13 @@ def f1(paragraph: str, banned: list[str]) -> str:
     # find the max
     return word_counts.most_common(1)[0][0]
 
+
 # -----------------------------------------------------------------------------
 # list comprehension & dict Counter
 # 48 [ms]
 def f1B(paragraph: str, banned: list[str]) -> str:
     words = [word for word in re.sub("[^\w]", " ", paragraph)
-        .lower().split() if word not in banned]
+    .lower().split() if word not in banned]
 
     word_counts = collections.Counter(words)
 
