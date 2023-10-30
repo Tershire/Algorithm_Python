@@ -6,6 +6,10 @@
 
 
 # KEY TAKEAWAY ****************************************************************
+# I first thought about the mathematics.
+# while not proven, it gave me an idea that to achieve this request,
+# the distance of each pair of numbers should be minimized,
+# meaning that they better to be sorted, then paired up.
 
 
 # case ////////////////////////////////////////////////////////////////////////
