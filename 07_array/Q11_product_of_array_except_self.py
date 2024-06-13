@@ -19,7 +19,7 @@ nums = [1, 2, 3, 4]
 # algo ////////////////////////////////////////////////////////////////////////
 # -----------------------------------------------------------------------------
 # pre-calculation of cumulative multiplications: {from left, from right}
-# # 305 [ms]
+# 305 [ms]
 def f1(nums: list[int]) -> list[int]:
     a = [nums[0]]
     b = [nums[-1]]
@@ -41,7 +41,7 @@ def f1(nums: list[int]) -> list[int]:
 
 
 # -----------------------------------------------------------------------------
-# method
+# similar to f1
 # 269 [ms]
 def f1B(nums: list[int]) -> list[int]:
     a = []
