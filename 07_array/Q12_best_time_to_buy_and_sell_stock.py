@@ -5,6 +5,9 @@
 # 2024 MAY 31
 
 
+import sys
+
+
 # KEY TAKEAWAY ****************************************************************
 """
 focus directly more on the output we want to achieve.
@@ -12,7 +15,7 @@ for extreme values, one could use:
 > sys.maxsize
 > -sys.maxsize
 """
-import sys
+
 
 # case ////////////////////////////////////////////////////////////////////////
 prices = [7, 1, 5, 3, 6, 4]
