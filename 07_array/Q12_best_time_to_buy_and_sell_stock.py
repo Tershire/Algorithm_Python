@@ -7,7 +7,10 @@
 
 # KEY TAKEAWAY ****************************************************************
 """
-
+focus directly more on the output we want to achieve.
+for extreme values, one could use:
+> sys.maxsize
+> -sys.maxsize
 """
 import sys
 
