@@ -1,15 +1,16 @@
 # Q13_panlindrome_linked_list.py
-# LeetCode #
-import collections
-
+# LeetCode 234
 
 # Tershire
 # 2024 JUN 14
 
 
+import collections
+
+
 # KEY TAKEAWAY ****************************************************************
 """
-
+runner.
 """
 
 
