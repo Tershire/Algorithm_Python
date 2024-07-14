@@ -7,7 +7,10 @@
 
 # KEY TAKEAWAY ****************************************************************
 """
-
+linked list frequently used .next, so the current object is lost.
+one can save the current object as root = a.
+then even if a.next = b is executed, root can be retrieved.
+it is useful to know how computational circuits operate.
 """
 
 
@@ -16,7 +19,7 @@ class List_Node(object):
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
-
+        
 
 def list_to_linked_list(x: list):
     def create_node(x, i):
@@ -118,6 +121,30 @@ def f1B(l1, l2):
     return list_to_reversed_linked_list(str(v))
 
 
+# -----------------------------------------------------------------------------
+# inspired by the full adder.
+# 43 [ms]
+def f2B(l1, l2):
+    node = root = ListNode(0)  # root saves the current object of node at ListNode(0)
+
+    carry = 0
+    while l1 or l2 or carry:
+        digit_sum = 0
+
+        if l1:
+            digit_sum += l1.val
+            l1 = l1.next
+        if l2:
+            digit_sum += l2.val
+            l2 = l2.next
+
+        carry, val = divmod(digit_sum + carry, 10)
+        node.next = ListNode(val)
+        node = node.next
+
+    return root.next  # head
+
+
 # test ////////////////////////////////////////////////////////////////////////
 def linked_list_to_list(q: List_Node) -> list:
     x = []
@@ -128,8 +155,14 @@ def linked_list_to_list(q: List_Node) -> list:
 
     return x
 
+l1, l2 = list_to_linked_list(x), list_to_linked_list(y)
 c = f1(l1, l2)
 print(linked_list_to_list(c))
 
+l1, l2 = list_to_linked_list(x), list_to_linked_list(y)
 c = f1B(l1, l2)
+print(linked_list_to_list(c))
+
+l1, l2 = list_to_linked_list(x), list_to_linked_list(y)
+c = f2B(l1, l2)
 print(linked_list_to_list(c))
